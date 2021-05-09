@@ -32,6 +32,7 @@ function draw() {
   textSize(20);
   fill("white");
   text("Press up arrow to feed the dog!", 95, 20);
+  text("Food Left: "+foodS, 10, 80);
 }
 
 function readStock(data){
@@ -42,7 +43,7 @@ function writeStocks(x){
   if(x < 0){
     x = 0;
   }else{
-    x =- 1;
+    x -= 1;
   }
 
   db.ref("/").update({
